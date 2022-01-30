@@ -67,6 +67,7 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ run_command,  "    %s   |",   "echo $(whoami)" },
         { battery_perc, "    %s%%   ",  "BAT0"            },
+        { battery_remaining, "   %s   ", "BAT0"},
         { battery_state,"   %s    |",    "BAT0"           },
         { wifi_essid,   "   ﬉ %s   ",    "wlan0"          },
         { wifi_perc,    "   %s%%   ",    "wlan0"          },
@@ -74,7 +75,8 @@ static const struct arg args[] = {
 	{ netspeed_tx,   "   ﴻ %s   |",   "wlan0"          },
         { run_command,   "    %s   |", "echo $(bluetoothctl show | grep Powered| awk -F \":\" '{print $2}')"},
 	{ disk_free,    "    %s   |",   "/"              },
-	{ cpu_perc,     "   ﬙ %s%%   |", NULL             },
+	{ cpu_perc,     "   ﬙ %s%%   ", NULL             },
+        { load_avg,      "   %s   |", NULL },
 	{ ram_free,     "    %s   ",   NULL             },
         { swap_free,    "   %s   |",      NULL             },
 	{ run_command,  "   墳 %s   |",  "echo $(amixer sget Master | awk -F \"[][]\" '{print $2}')"     },
